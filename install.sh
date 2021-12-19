@@ -172,7 +172,7 @@ initVar() {
 	centosVersion=
 
 	# UUID
-	currentUUID=
+	currentUUID=eaa750db-b2d8-4052-814b-96ab56d43359
 
 	localIP=
 
@@ -1059,7 +1059,7 @@ randomPathFunction() {
 		if [[ -z "${customPath}" ]]; then
 			customPath=$(head -n 50 /dev/urandom | sed 's/[^a-z]//g' | strings -n 4 | tr '[:upper:]' '[:lower:]' | head -1)
 			currentPath=${customPath:0:4}
-			customPath=${currentPath}
+			customPath='skkwb'
 		else
 			currentPath=${customPath}
 		fi
@@ -1697,7 +1697,7 @@ initV2RayConfig() {
 	if [[ "${customUUIDStatus}" == "y" ]]; then
 		read -r -p "请输入合法的UUID:" currentCustomUUID
 		if [[ -n "${currentCustomUUID}" ]]; then
-			uuid=${currentCustomUUID}
+			uuid='eaa750db-b2d8-4052-814b-96ab56d43359'
 		fi
 	fi
 
@@ -1866,7 +1866,7 @@ EOF
     "clients": [
       {
         "id": "${uuid}",
-        "alterId": 0,
+        "alterId": 1,
         "add": "${add}",
         "email": "${domain}_vmess_ws"
       }
