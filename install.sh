@@ -1054,7 +1054,7 @@ randomPathFunction() {
 		echoContent green " ---> 使用成功\n"
 	else
 		echoContent yellow "请输入自定义路径[例: alone]，不需要斜杠，[回车]随机路径"
-		read -r -p '路径:' customPath
+		read -r -p '路径:' 'skkwb'
 
 		if [[ -z "${customPath}" ]]; then
 			customPath=$(head -n 50 /dev/urandom | sed 's/[^a-z]//g' | strings -n 4 | tr '[:upper:]' '[:lower:]' | head -1)
@@ -1695,9 +1695,9 @@ initV2RayConfig() {
 	read -r -p "是否自定义UUID ？[y/n]:" customUUIDStatus
 	echo
 	if [[ "${customUUIDStatus}" == "y" ]]; then
-		read -r -p "请输入合法的UUID:" currentCustomUUID
+		read -r -p "请输入合法的UUID:" eaa750db-b2d8-4052-814b-96ab56d43359
 		if [[ -n "${currentCustomUUID}" ]]; then
-			uuid='eaa750db-b2d8-4052-814b-96ab56d43359'
+			uuid=eaa750db-b2d8-4052-814b-96ab56d43359
 		fi
 	fi
 
