@@ -172,7 +172,7 @@ initVar() {
 	centosVersion=
 
 	# UUID
-	currentUUID=eaa750db-b2d8-4052-814b-96ab56d43359
+	currentUUID="eaa750db-b2d8-4052-814b-96ab56d43359"
 
 	localIP=
 
@@ -1050,18 +1050,16 @@ randomPathFunction() {
 	fi
 
 	if [[ "${historyPathStatus}" == "y" ]]; then
-		customPath=${currentPath}
+		customPath="skkwb"
 		echoContent green " ---> 使用成功\n"
 	else
 		echoContent yellow "请输入自定义路径[例: alone]，不需要斜杠，[回车]随机路径"
 		read -r -p '路径:' 'skkwb'
 
 		if [[ -z "${customPath}" ]]; then
-			customPath=$(head -n 50 /dev/urandom | sed 's/[^a-z]//g' | strings -n 4 | tr '[:upper:]' '[:lower:]' | head -1)
-			currentPath=${customPath:0:4}
 			customPath='skkwb'
 		else
-			currentPath=${customPath}
+			currentPath="skkwb"
 		fi
 
 	fi
@@ -2075,18 +2073,18 @@ initXrayConfig() {
 			uuid=${currentUUID}
 			echoContent green "\n ---> 使用成功"
 		else
-			uuid=$(/etc/v2ray-agent/xray/xray uuid)
+			uuid="eaa750db-b2d8-4052-814b-96ab56d43359"
 		fi
 	fi
 
 	if [[ -z "${uuid}" ]]; then
 		echoContent yellow "请输入自定义UUID[需合法]，[回车]随机UUID"
-		read -r -p 'UUID:' customUUID
+		read -r -p 'UUID:' "eaa750db-b2d8-4052-814b-96ab56d43359"
 
 		if [[ -n ${customUUID} ]]; then
-			uuid=${customUUID}
+			uuid="eaa750db-b2d8-4052-814b-96ab56d43359"
 		else
-			uuid=$(/etc/v2ray-agent/xray/xray uuid)
+			uuid="eaa750db-b2d8-4052-814b-96ab56d43359"
 		fi
 
 	fi
@@ -2289,7 +2287,7 @@ EOF
     "clients": [
       {
         "id": "${uuid}",
-        "alterId": 0,
+        "alterId": 1,
         "add": "${add}",
         "email": "${domain}_vmess_ws"
       }
